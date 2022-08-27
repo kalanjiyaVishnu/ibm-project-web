@@ -16,8 +16,8 @@
     "incremental": true,
     "noUncheckedIndexedAccess": true
   },
-  "baseUrl": "./",
-  "path": {
+  "baseUrl": ".",
+  "paths": {
     "@/*": ["./src/*"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.mjs"],

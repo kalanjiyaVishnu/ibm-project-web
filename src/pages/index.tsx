@@ -1,7 +1,8 @@
 import type { NextPage } from "next"
 import Header from "../components/Header"
 import { trpc } from "../utils/trpc"
-
+import { IframeContainer } from "../components/IframeContainer"
+import Link from "next/link"
 const Home: NextPage = () => {
   const { data, isLoading } = trpc.useQuery(["graphs", { limit: 5 }])
   console.log("data", data)
@@ -10,9 +11,9 @@ const Home: NextPage = () => {
   }
   if (data) {
     return (
-      <div>
-        <Header />
+      <div className="mb-10">
         <Main />
+        <ShowCase />
       </div>
     )
   }
@@ -20,9 +21,19 @@ const Home: NextPage = () => {
   return <div className="p-8 bg-red-700"></div>
 }
 
+const ShowCase = () => {
+  return (
+    <div className="flex items-center justify-center h-max">
+      <IframeContainer
+        title="sales wise profit and discount"
+        link={`https://eu2.ca.analytics.ibm.com/bi/?perspective=explore&amp;pathRef=.my_folders%2Fdcasd%2FNew%2Bexploration&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;subView=model000001848f3600a3_00000005`}
+      />
+    </div>
+  )
+}
 const Main = () => {
   return (
-    <main className="lg:max-h-full">
+    <main className="">
       <div className="relative px-6 lg:px-8">
         <div className="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
           <div>
@@ -48,7 +59,7 @@ const Main = () => {
               </p>
               <div className="mt-8 flex gap-x-4 sm:justify-center">
                 <a
-                  href="#"
+                  href="/analytics"
                   className="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700"
                 >
                   Get started
@@ -56,15 +67,14 @@ const Main = () => {
                     &rarr;
                   </span>
                 </a>
-                <a
-                  href="#"
-                  className="inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
-                >
-                  Live demo
-                  <span className="text-gray-400" aria-hidden="true">
-                    &rarr;
+                <Link href="/dashboard">
+                  <span className="inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                    Dashboard
+                    <span className="text-gray-400" aria-hidden="true">
+                      &rarr;
+                    </span>
                   </span>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">

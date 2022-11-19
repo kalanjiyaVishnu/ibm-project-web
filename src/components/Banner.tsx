@@ -1,5 +1,4 @@
 import { MegaphoneIcon, XMarkIcon } from "@heroicons/react/24/outline"
-import { ReactElement } from "react"
 
 export default function Banner({
   title,

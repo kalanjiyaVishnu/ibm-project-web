@@ -16,6 +16,7 @@ import {
 } from "@heroicons/react/24/outline"
 import { ChevronDownIcon } from "@heroicons/react/20/solid"
 import Link from "next/link"
+import Image from "next/image"
 
 const solutions = [
   {
@@ -94,7 +95,7 @@ const recentPosts = [
   { id: 3, name: "Improve your customer experience", href: "#" },
 ]
 
-function classNames(...classes: any) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ")
 }
 
@@ -159,11 +160,8 @@ export default function Header() {
                       <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                         <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                           {solutions.map((item) => (
-                            <Link href={item.href}>
-                              <div
-                                key={item.name}
-                                className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
-                              >
+                            <Link href={item.href} key={item.name}>
+                              <div className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
                                 <item.icon
                                   className="h-6 w-6 flex-shrink-0 text-indigo-600"
                                   aria-hidden="true"
@@ -182,8 +180,8 @@ export default function Header() {
                         </div>
                         <div className="space-y-6 bg-gray-50 px-5 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
                           {callsToAction.map((item) => (
-                            <Link href={item.href}>
-                              <div key={item.name} className="flow-root">
+                            <Link href={item.href} key={item.name}>
+                              <div className="flow-root">
                                 <div className="-m-3 flex items-center rounded-md p-3 text-base font-medium text-gray-900 hover:bg-gray-100">
                                   <item.icon
                                     className="h-6 w-6 flex-shrink-0 text-gray-400"
@@ -337,7 +335,7 @@ export default function Header() {
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <img
+                  <Image
                     className="h-8 w-auto"
                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                     alt="Your Company"

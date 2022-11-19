@@ -23,7 +23,21 @@ export const appRouter = trpc
       .nullish(),
     resolve({ input }) {
       const configs = [
-        "https://eu2.ca.analytics.ibm.com/bi/?perspective=dashboard&pathRef=.my_folders%2FQuantity%252C%2BSales%2Band%2BProfit%2Bby%2BSegment&action=view&mode=dashboard&subView=model000001848c07ed56_00000000",
+        {
+          src: "https://eu2.ca.analytics.ibm.com/bi/?perspective=explore&amp;pathRef=.my_folders%2Fdcasd%2FNew%2Bexploration&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;subView=model000001848f389ca9_00000004",
+          label: "something",
+          tag: "",
+        },
+        {
+          src: "https://eu2.ca.analytics.ibm.com/bi/?perspective=explore&amp;pathRef=.my_folders%2Fdcasd%2FNew%2Bexploration&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;subView=model000001848f391f82_00000004",
+          label: "something",
+          tag: "",
+        },
+        {
+          src: "https://eu2.ca.analytics.ibm.com/bi/?perspective=explore&amp;pathRef=.my_folders%2Fdcasd%2FNew%2Bexplorationn&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;subView=model000001848f43e9d2_00000004",
+          label: "something",
+          tag: "",
+        },
       ]
       return {
         graphs: configs.slice(0, input?.limit ?? configs.length),

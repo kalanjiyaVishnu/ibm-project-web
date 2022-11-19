@@ -20,6 +20,6 @@
   "paths": {
     "@/*": ["./src/*"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.mjs"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.mjs", "postcss.config.js"],
   "exclude": ["node_modules"]
 }

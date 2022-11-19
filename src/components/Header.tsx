@@ -100,16 +100,16 @@ function classNames(...classes: any) {
 
 export default function Header() {
   return (
-    <Popover className="relative bg-white">
+    <Popover className="relative bg-white ">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
-              <>
+              <div className="cursor-pointer">
                 <span className="sr-only">Your Company</span>
                 <svg
                   width="30"
-                  height="15"
+                  height="8"
                   viewBox="0 0 76 65"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +117,7 @@ export default function Header() {
                 >
                   <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" fill="#000000" />
                 </svg>
-              </>
+              </div>
             </Link>
           </div>
           <div className="-my-2 -mr-2 md:hidden">

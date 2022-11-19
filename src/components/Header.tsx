@@ -15,8 +15,6 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline"
 import { ChevronDownIcon } from "@heroicons/react/20/solid"
-import Link from "next/link"
-import Image from "next/image"
 
 const solutions = [
   {
@@ -94,8 +92,8 @@ const recentPosts = [
   },
   { id: 3, name: "Improve your customer experience", href: "#" },
 ]
-function classNames(...classes: string[]) {
-  console.log("classes", classes)
+
+function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ")
 }
 
@@ -105,21 +103,19 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link href="/">
-              <>
-                <span className="sr-only">Your Company</span>
-                <svg
-                  width="30"
-                  height="15"
-                  viewBox="0 0 76 65"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="mx-auto h-12 w-auto"
-                >
-                  <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" fill="#000000" />
-                </svg>
-              </>
-            </Link>
+            <a href="/">
+              <span className="sr-only">Your Company</span>
+              <svg
+                width="30"
+                height="15"
+                viewBox="0 0 76 65"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="mx-auto h-12 w-auto"
+              >
+                <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" fill="#000000" />
+              </svg>
+            </a>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
             <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -160,7 +156,7 @@ export default function Header() {
                       <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                         <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                           {solutions.map((item) => (
-                            <Link
+                            <a
                               key={item.name}
                               href={item.href}
                               className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
@@ -177,13 +173,13 @@ export default function Header() {
                                   {item.description}
                                 </p>
                               </div>
-                            </Link>
+                            </a>
                           ))}
                         </div>
                         <div className="space-y-6 bg-gray-50 px-5 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
                           {callsToAction.map((item) => (
                             <div key={item.name} className="flow-root">
-                              <Link
+                              <a
                                 href={item.href}
                                 className="-m-3 flex items-center rounded-md p-3 text-base font-medium text-gray-900 hover:bg-gray-100"
                               >
@@ -192,7 +188,7 @@ export default function Header() {
                                   aria-hidden="true"
                                 />
                                 <span className="ml-3">{item.name}</span>
-                              </Link>
+                              </a>
                             </div>
                           ))}
                         </div>
@@ -203,18 +199,18 @@ export default function Header() {
               )}
             </Popover>
 
-            <Link
+            <a
               href="#"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               Pricing
-            </Link>
-            <Link
+            </a>
+            <a
               href="#"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               Docs
-            </Link>
+            </a>
 
             <Popover className="relative">
               {({ open }) => (
@@ -248,7 +244,7 @@ export default function Header() {
                       <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                         <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                           {resources.map((item) => (
-                            <Link
+                            <a
                               key={item.name}
                               href={item.href}
                               className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
@@ -265,7 +261,7 @@ export default function Header() {
                                   {item.description}
                                 </p>
                               </div>
-                            </Link>
+                            </a>
                           ))}
                         </div>
                         <div className="bg-gray-50 px-5 py-5 sm:px-8 sm:py-8">
@@ -279,24 +275,24 @@ export default function Header() {
                                   key={post.id}
                                   className="truncate text-base"
                                 >
-                                  <Link
+                                  <a
                                     href={post.href}
                                     className="font-medium text-gray-900 hover:text-gray-700"
                                   >
                                     {post.name}
-                                  </Link>
+                                  </a>
                                 </li>
                               ))}
                             </ul>
                           </div>
                           <div className="mt-5 text-sm">
-                            <Link
+                            <a
                               href="#"
                               className="font-medium text-indigo-600 hover:text-indigo-500"
                             >
                               View all posts
                               <span aria-hidden="true"> &rarr;</span>
-                            </Link>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -307,18 +303,18 @@ export default function Header() {
             </Popover>
           </Popover.Group>
           <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-            <Link
+            <a
               href="/signin"
               className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
             >
               Sign in
-            </Link>
-            <Link
+            </a>
+            <a
               href="/signup"
               className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
             >
               Sign up
-            </Link>
+            </a>
           </div>
         </div>
       </div>
@@ -340,7 +336,7 @@ export default function Header() {
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <Image
+                  <img
                     className="h-8 w-auto"
                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                     alt="Your Company"
@@ -356,7 +352,7 @@ export default function Header() {
               <div className="mt-6">
                 <nav className="grid gap-y-8">
                   {solutions.map((item) => (
-                    <Link
+                    <a
                       key={item.name}
                       href={item.href}
                       className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"
@@ -368,51 +364,48 @@ export default function Header() {
                       <span className="ml-3 text-base font-medium text-gray-900">
                         {item.name}
                       </span>
-                    </Link>
+                    </a>
                   ))}
                 </nav>
               </div>
             </div>
             <div className="space-y-6 py-6 px-5">
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                <Link
+                <a
                   href="#"
                   className="text-base font-medium text-gray-900 hover:text-gray-700"
                 >
                   Pricing
-                </Link>
+                </a>
 
-                <Link
+                <a
                   href="#"
                   className="text-base font-medium text-gray-900 hover:text-gray-700"
                 >
                   Docs
-                </Link>
+                </a>
                 {resources.map((item) => (
-                  <Link
+                  <a
                     key={item.name}
                     href={item.href}
                     className="text-base font-medium text-gray-900 hover:text-gray-700"
                   >
                     {item.name}
-                  </Link>
+                  </a>
                 ))}
               </div>
               <div>
-                <Link
+                <a
                   href="#"
                   className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                 >
                   Sign up
-                </Link>
+                </a>
                 <p className="mt-6 text-center text-base font-medium text-gray-500">
                   Existing customer?{" "}
-                  <Link
-                    href="#"
-                    className="text-indigo-600 hover:text-indigo-500"
-                  >
+                  <a href="#" className="text-indigo-600 hover:text-indigo-500">
                     Sign in
-                  </Link>
+                  </a>
                 </p>
               </div>
             </div>

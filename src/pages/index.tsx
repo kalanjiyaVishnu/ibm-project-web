@@ -29,7 +29,7 @@ const ShowCase = () => {
         link="https://eu2.ca.analytics.ibm.com/bi/?perspective=explore&amp;pathRef=.my_folders%2Fdcasd%2FNew%2Bexploration&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;subView=model000001848f3600a3_00000005"
       ></IframeContainer>
       <IframeContainer
-        title="Enter some title or delte this line"
+        // title="Enter some title or delte this line"
         link="https://eu2.ca.analytics.ibm.com/bi/?perspective=explore&amp;pathRef=.my_folders%2Fdcasd%2FNew%2Bexploration&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;subView=model000001848f389ca9_00000004"
       ></IframeContainer>
       <IframeContainer link="https://eu2.ca.analytics.ibm.com/bi/?perspective=explore&amp;pathRef=.my_folders%2Fdcasd%2FNew%2Bexplorationn&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;subView=model000001848f43e9d2_00000004"></IframeContainer>

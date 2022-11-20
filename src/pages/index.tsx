@@ -24,12 +24,17 @@ const Home: NextPage = () => {
 const ShowCase = () => {
   return (
     <div className="flex flex-col gap-4 items-center justify-center h-max">
-      <iframe src="https://eu2.ca.analytics.ibm.com/bi/?perspective=explore&amp;pathRef=.my_folders%2Fdcasd%2FNew%2Bexploration&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;subView=model000001848f3600a3_00000005" width="700" height="300" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen=""></iframe>
-      <iframe src="https://eu2.ca.analytics.ibm.com/bi/?perspective=explore&amp;pathRef=.my_folders%2Fdcasd%2FNew%2Bexploration&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;subView=model000001848f389ca9_00000004" width="700" height="300" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen=""></iframe>
-      <iframe src="https://eu2.ca.analytics.ibm.com/bi/?perspective=explore&amp;pathRef=.my_folders%2Fdcasd%2FNew%2Bexplorationn&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;subView=model000001848f43e9d2_00000004" width="700" height="300" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen=""></iframe>
-      <iframe src="https://eu2.ca.analytics.ibm.com/bi/?perspective=explore&amp;pathRef=.my_folders%2Fdcasd%2FNew%2Bexploration&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;subView=model000001848f391f82_00000004" width="700" height="300" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen=""></iframe>
-      
-      </div>
+      <IframeContainer
+        title="Sales analytics with profit and sales"
+        link="https://eu2.ca.analytics.ibm.com/bi/?perspective=explore&amp;pathRef=.my_folders%2Fdcasd%2FNew%2Bexploration&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;subView=model000001848f3600a3_00000005"
+      ></IframeContainer>
+      <IframeContainer
+        title="Enter some title or delte this line"
+        link="https://eu2.ca.analytics.ibm.com/bi/?perspective=explore&amp;pathRef=.my_folders%2Fdcasd%2FNew%2Bexploration&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;subView=model000001848f389ca9_00000004"
+      ></IframeContainer>
+      <IframeContainer link="https://eu2.ca.analytics.ibm.com/bi/?perspective=explore&amp;pathRef=.my_folders%2Fdcasd%2FNew%2Bexplorationn&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;subView=model000001848f43e9d2_00000004"></IframeContainer>
+      <IframeContainer link="https://eu2.ca.analytics.ibm.com/bi/?perspective=explore&amp;pathRef=.my_folders%2Fdcasd%2FNew%2Bexploration&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;subView=model000001848f391f82_00000004"></IframeContainer>
+    </div>
   )
 }
 const Main = () => {

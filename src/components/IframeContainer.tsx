@@ -13,9 +13,9 @@ export const IframeContainer: FC<IframeContainerProps> = ({
   height = "400",
 }) => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 overflow-hidden">
       {title && <h1 className="text-2xl">{title}</h1>}
-      <div className="rounded-md overflow-hidden shadow-lg">
+      <div className="rounded-md shadow-md border-2">
         <iframe
           src={link}
           width={width}
